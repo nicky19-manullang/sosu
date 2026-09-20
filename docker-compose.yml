@@ -1,0 +1,15 @@
+﻿services:
+  db:
+    image: postgis/postgis:16-3.4
+    restart: always
+    environment:
+      POSTGRES_USER: sosu
+      POSTGRES_PASSWORD: sosu123
+      POSTGRES_DB: sosu_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - sosu_pgdata:/var/lib/postgresql/data
+
+volumes:
+  sosu_pgdata:
